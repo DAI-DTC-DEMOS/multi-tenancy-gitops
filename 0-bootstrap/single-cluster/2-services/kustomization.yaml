@@ -3,10 +3,10 @@ resources:
 
 ## Cloud Pak for Integration
 #- argocd/operators/ibm-ace-operator.yaml
-#- argocd/operators/ibm-apic-operator.yaml
-#- argocd/instances/ibm-apic-instance.yaml
-#- argocd/instances/ibm-apic-management-portal-instance.yaml
-#- argocd/instances/ibm-apic-gateway-analytics-instance.yaml
+- argocd/operators/ibm-apic-operator.yaml
+- argocd/instances/ibm-apic-instance.yaml
+- argocd/instances/ibm-apic-management-portal-instance.yaml
+- argocd/instances/ibm-apic-gateway-analytics-instance.yaml
 #- argocd/operators/ibm-aspera-operator.yaml
 #- argocd/operators/ibm-assetrepository-operator.yaml
 #- argocd/operators/ibm-cp4i-operators.yaml
@@ -92,19 +92,19 @@ resources:
 #- argocd/instances/ibm-sccm.yaml
 
 # Required for IBM MQ
-#- argocd/instances/openldap.yaml
+- argocd/instances/openldap.yaml
 # Required for IBM ACE, IBM MQ
-#- argocd/operators/cert-manager.yaml
-#- argocd/instances/cert-manager-instance.yaml
+- argocd/operators/cert-manager.yaml
+- argocd/instances/cert-manager-instance.yaml
 
 # Sealed Secrets
 - argocd/instances/sealed-secrets.yaml
 
 # CICD
-#- argocd/operators/grafana-operator.yaml
-#- argocd/instances/grafana-instance.yaml
-#- argocd/instances/grafana-instana.yaml
-#- argocd/instances/artifactory.yaml
+- argocd/operators/grafana-operator.yaml
+- argocd/instances/grafana-instance.yaml
+- argocd/instances/grafana-instana.yaml
+- argocd/instances/artifactory.yaml
 #- argocd/instances/chartmuseum.yaml
 #- argocd/instances/developer-dashboard.yaml
 #- argocd/instances/swaggereditor.yaml
@@ -151,7 +151,7 @@ patches:
 - target:
     group: argoproj.io
     kind: Application
-    labelSelector: "gitops.tier.layer=applications,gitops.tier.source=git"
+    labelSelector: "gitops.tier.layer=pplications,gitops.tier.source=git"
   patch: |-
     - op: add
       path: /spec/source/repoURL
