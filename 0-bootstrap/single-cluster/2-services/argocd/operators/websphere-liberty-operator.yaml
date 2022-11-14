@@ -25,7 +25,7 @@ spec:
               name: ibm-websphere-liberty
               subscription:
                 installPlanApproval: Automatic
-                name: ibm-mq
+                name: ibm-websphere-liberty
                 source: ibm-operator-catalog
                 sourceNamespace: openshift-marketplace
   syncPolicy:
