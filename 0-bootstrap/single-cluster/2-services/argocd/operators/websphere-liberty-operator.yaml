@@ -1,34 +1,10 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
 metadata:
-  name: websphere-liberty-operator
-  annotations:
-    argocd.argoproj.io/sync-wave: "230"
-  labels:
-    gitops.tier.group: ibm-cloudpak
-    gitops.tier.layer: services
-    gitops.tier.source: git
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  name: ibm-websphere-liberty
+  namespace: openshift-operators
 spec:
-  destination:
-    namespace: openshift-operators
-    server: 'https://kubernetes.default.svc'
-  project: services
-  source:
-    path: operators/websphere-liberty-operator
-    helm:
-      values: |
-        websphere-liberty-operator:
-          subscriptions:
-            ibmwebsphereliberty:
-              name: ibm-websphere-liberty
-              subscription:
-                installPlanApproval: Automatic
-                name: ibm-websphere-liberty
-                source: ibm-operator-catalog
-                sourceNamespace: openshift-marketplace
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  installPlanApproval: Automatic
+  name: ibm-websphere-liberty
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
