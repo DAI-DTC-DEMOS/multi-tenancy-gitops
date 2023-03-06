@@ -9,6 +9,11 @@ resources:
 #- argocd/mq/stage.yaml
 #- argocd/mq/prod.yaml
 
+#- argocd/liberty/cicd.yaml
+#- argocd/liberty/dev.yaml
+#- argocd/liberty/stage.yaml
+#- argocd/liberty/prod.yaml
+#
 #- argocd/apic/cicd.yaml
 #- argocd/apic/dev.yaml
 #- argocd/apic/stage.yaml
